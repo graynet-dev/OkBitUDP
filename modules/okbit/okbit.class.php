@@ -48,27 +48,37 @@
 	*255/FF - поиск всех Шлюзов и ethernet устройств по широковещательному запросу
 	**/
 
+define ('OKBIT_DEVICES_CODES', serialize (array('6001' =>	'МУС-8',
+						'6002' => 	'МОС-6',
+						'6003' => 	'УМА-8',
+						'6004' => 	'МДВ-4',
+						'6005' => 	'МДН-6',
+						'6007' => 	'IRM',
+						'6008' => 	'FAM-6'
+						)));
 
 
 define ('OKBIT_GATE_CODES', serialize (array(	'6000' =>	'GATE Ethernet-RS485',
-												'7001' =>	'ESP Lamp',
-												'7002' =>	'ESP Climatic',
-												'7003' =>	'ESP Rele',
-												'7004' =>	'ESP LED RGB',
-												'7005' =>	'ESP Dimmer',
-												'7006' =>	'ESP Sensor',
-												'7007' =>	'ESP Thermostat'
-												)));
+						'7001' =>	'ESP Lamp',
+						'7002' =>	'ESP Climatic',
+						'7003' =>	'ESP Rele',
+						'7004' =>	'ESP LED RGB',
+						'7005' =>	'ESP Dimmer',
+						'7006' =>	'ESP Sensor',
+						'7007' =>	'ESP Thermostat',
+						'8000' =>	'GATE Ethernet-aHomeBus',
+						)));
 
 
-define ('OKBIT_DEVICES_CODES', serialize (array('6001' =>	'МУС-8',
-												'6002' => 	'МОС-6',
-												'6003' => 	'УМА-8',
-												'6004' => 	'МДВ-4',
-												'6005' => 	'МДН-6',
-												'6007' => 	'IRM',
-												'6008' => 	'FAM-6'
-												)));
+define ('OKBIT_AHOMEBUS_CODES', serialize (array('8001' =>	'МУС-8',
+						'8002' => 	'МОС-6',
+						'8003' => 	'УМА-8',
+						'8004' => 	'МДВ-4',
+						'8005' => 	'МД6',
+						'8006' => 	'XXX',
+						'8007' => 	'IRM',
+						'8008' => 	'FAM-6'
+						)));
 												
 
 												
@@ -88,6 +98,16 @@ define ('DATA_7004', 'Red,Green,Blue');
 define ('DATA_7005', 'Lamp,Level');
 define ('DATA_7006', 'Status1,Status1');
 define ('DATA_7007', 'ST_Relay,Mode,Temp,SetTemp,Hysteresis,Set');
+
+define ('DATA_8001', 'Lamp1,Lamp2,Lamp3,Lamp4,Lamp5,Lamp6,Lamp7,Lamp8');	
+define ('DATA_8002', 'S1,S2,S3,S4,S5,S6');													
+define ('DATA_8003', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8004', 'Lamp1,Level1,Lamp2,Level2,Lamp3,Level3,Lamp4,Level4');
+define ('DATA_8005', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8006', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8007', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8008', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+
 
 class okbit extends module {
 	
