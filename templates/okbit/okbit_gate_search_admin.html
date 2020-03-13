@@ -76,7 +76,8 @@
 						
 						<td style="vertical-align:middle">
 							[#if GATE_NAME!=""#]
-								[#if MOD="6000"#]<b style="color:#72a145">[#endif MOD#][#GATE_NAME#][#if MOD="6000"#]</b>[#endif MOD#]
+								[#if MOD="8000"#]<b style="color:#72a145">[#GATE_NAME#]</b>[#endif MOD#]
+								[#if MOD="6000"#]<b style="color:#72a145">[#GATE_NAME#]</b>[#endif MOD#]
 							[#else#]
 								&nbsp;
 							[#endif#]
@@ -114,8 +115,7 @@
 								<a href="?data_source=okbit_gate&view_mode=bind_gate&id=[#ID#]" title="<#LANG_OKBIT_APP_BIND_GATE#>" onclick="return partLoad(this.href);" class="btn btn-default [#if STATUS==0#]disabled[#endif#]"><i class="glyphicon glyphicon-ok-sign"></i></a>
 								
 								[#if MOD==6000#]<a href="?data_source=okbit_device&view_mode=search_okbit_devices&parent_title=[#TITLE#]&parent_id=[#ID#]"  title="<#LANG_OKBIT_APP_DEVICES_IN_GATE#>" class="btn btn-default"><i class="glyphicon glyphicon-th-list"></i></a>[#endif#]
-								[#if MOD==8000#]<a href="?data_source=okbit_device&view_mode=search_okbit_devices&parent_title=[#TITLE#]&parent_id=[#ID#]"  title="<#LANG_OKBIT_APP_DEVICES_IN_GATE#>" class="btn btn-default"><i class="glyphicon glyphicon-th-list"></i></a>[#endif#]
-
+								[#if MOD==8000#]<a href="?data_source=okbit_device&view_mode=search_okbit_devices2&parent_title=[#TITLE#]&parent_id=[#ID#]"  title="<#LANG_OKBIT_APP_DEVICES_IN_GATE#>" class="btn btn-default"><i class="glyphicon glyphicon-th-list"></i></a>[#endif#]
 								
 								<a href="?data_source=okbit_gate&view_mode=edit_okbit_gate&id=[#ID#]" title="<#LANG_OKBIT_APP_EDIT#>" class="btn btn-default"> <i class="glyphicon glyphicon-pencil"></i></a>
 								

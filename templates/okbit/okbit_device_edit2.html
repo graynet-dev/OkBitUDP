@@ -1,0 +1,165 @@
+<!-- Table device_okbit edit -->
+<form action="?" method="post" enctype="multipart/form-data" name="frmEdit" class="form-horizontal">
+	<fieldset>
+	[#if OK#]
+	<div class="alert alert-success"><#LANG_DATA_SAVED#></div>
+	[#endif OK#]
+	
+	[#if ERR#]
+	<div class="alert alert-error"><#LANG_FILLOUT_REQURED#>222</div>
+	[#endif ERR#]
+	
+	<input type="hidden" name="data_source" value="okbit_devices">
+		
+		<input type="hidden" name="parent_title" value="[#PARENT_TITLE#]">
+		
+		<input type="hidden" name="parent_id" value="[#PARENT_ID#]">
+
+		<div class="form-group">
+			<label class="col-lg-3 control-label" style="font-weight:bold">
+				<#LANG_TITLE#>:
+			</label>
+			<div class="col-lg-4"><input type="text" class="form-control" name="title" value="[#TITLE#]" id="title"></div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-lg-3 control-label"[#if ERR_SUB_ID#] style="color:red;font-weight:bold"[#endif#]>
+				ID подсети(*): 
+			</label>
+			<div class="col-lg-4" style="font-weight:bold">[#SUB_ID#]</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-lg-3 control-label"[#if ERR_DEVICE_ID#] style="color:red;font-weight:bold"[#endif#]>
+				ID модуля(*):
+			</label>
+			<div class="col-lg-4"><input type="text" class="form-control" name="device_id" value="[#DEVICE_ID#]" id="device_id"></div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-lg-3 control-label"[#if ERR_DEVICE_TYPE#] style="color:red;font-weight:bold"[#endif#]>
+				<#LANG_TYPE#> (*):
+			</label>
+			<div class="col-lg-4">
+				<select name="device" class="form-control">
+					<option value=""></option>
+					<option value="8001" [#if DEVICE="8001"#] selected[#endif#]>node_1_Net_center_PC</option>
+					<option value="8002" [#if DEVICE="8002"#] selected[#endif#]>node_2_Net_center_oraPi1</option>
+					<option value="8003" [#if DEVICE="8003"#] selected[#endif#]>node_3_Net_center_oraPi2</option>
+					<option value="8004" [#if DEVICE="8004"#] selected[#endif#]>node_4_Net_center_Due1</option>
+					<option value="8005" [#if DEVICE="8005"#] selected[#endif#]>node_5_Net_center_Due2</option>
+					<option value="8006" [#if DEVICE="8006"#] selected[#endif#]>node_6_Hallway_net_center</option>
+					<option value="8007" [#if DEVICE="8007"#] selected[#endif#]>node_7_Hallway_main</option>
+					<option value="8008" [#if DEVICE="8008"#] selected[#endif#]>node_8_Hallway_light</option>
+					<option value="8009" [#if DEVICE="8009"#] selected[#endif#]>node_9_Kitchen_net_center</option>
+					<option value="8010" [#if DEVICE="8010"#] selected[#endif#]>node_10_Kitchen_main</option>
+					<option value="8011" [#if DEVICE="8011"#] selected[#endif#]>node_11_Kitchen_light</option>
+					<option value="8012" [#if DEVICE="8012"#] selected[#endif#]>node_12_WC_main</option>
+					<option value="8013" [#if DEVICE="8013"#] selected[#endif#]>node_13_WC_waterleak</option>
+					<option value="8014" [#if DEVICE="8014"#] selected[#endif#]>node_14_Bathroom_main</option>
+					<option value="8015" [#if DEVICE="8015"#] selected[#endif#]>node_15_Boxroom_main</option>
+					<option value="8016" [#if DEVICE="8016"#] selected[#endif#]>node_16_Balcony_meteo</option>
+					<option value="8017" [#if DEVICE="8017"#] selected[#endif#]>node_17_Loggia_main</option>
+					<option value="8018" [#if DEVICE="8018"#] selected[#endif#]>node_18_Loggia_recuperator</option>
+					<option value="8019" [#if DEVICE="8019"#] selected[#endif#]>node_19_Livingroom_main</option>
+					<option value="8020" [#if DEVICE="8020"#] selected[#endif#]>node_20_Bedroom_main</option>
+					<option value="8021" [#if DEVICE="8021"#] selected[#endif#]>node_21_Cabinet_main</option>
+					<option value="8022" [#if DEVICE="8022"#] selected[#endif#]>node_22</option>
+					<option value="8023" [#if DEVICE="8023"#] selected[#endif#]>node_23</option>
+					<option value="8024" [#if DEVICE="8024"#] selected[#endif#]>node_24</option>
+					<option value="8025" [#if DEVICE="8025"#] selected[#endif#]>node_25</option>
+					<option value="8026" [#if DEVICE="8026"#] selected[#endif#]>node_26</option>
+					<option value="8027" [#if DEVICE="8027"#] selected[#endif#]>node_27</option>
+					<option value="8028" [#if DEVICE="8028"#] selected[#endif#]>node_28</option>
+					<option value="8029" [#if DEVICE="8029"#] selected[#endif#]>node_29</option>
+					<option value="8030" [#if DEVICE="8030"#] selected[#endif#]>node_30</option>
+					<option value="8031" [#if DEVICE="8031"#] selected[#endif#]>node_31</option>
+					<option value="8032" [#if DEVICE="8032"#] selected[#endif#]>node_32</option>
+					<option value="8033" [#if DEVICE="8033"#] selected[#endif#]>node_33</option>
+					<option value="8034" [#if DEVICE="8034"#] selected[#endif#]>node_34</option>
+					<option value="8035" [#if DEVICE="8035"#] selected[#endif#]>node_35</option>
+					<option value="8036" [#if DEVICE="8036"#] selected[#endif#]>node_36</option>
+					<option value="8037" [#if DEVICE="8037"#] selected[#endif#]>node_37</option>
+					<option value="8038" [#if DEVICE="8038"#] selected[#endif#]>node_38</option>
+					<option value="8039" [#if DEVICE="8039"#] selected[#endif#]>node_39</option>
+					<option value="8040" [#if DEVICE="8040"#] selected[#endif#]>node_40</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-lg-3 control-label"[#if ERR_IP#] style="color:red;font-weight:bold"[#endif#]>
+				SN:
+			</label>
+			<div class="col-lg-4" style="font-weight:bold" >[#SN#]</div>
+		</div>
+		
+		
+
+		[#if SERIAL!=""#]
+		<div class="form-group">
+			<label class="col-lg-3 control-label">
+				Серийный номер:
+			</label>
+			<div class="col-lg-4">[#SERIAL#]</div>
+		</div>
+		[#endif#]
+		
+		[#if DEVICE_TYPE_CODE!=""#]
+		<div class="form-group">
+			<label class="col-lg-3 control-label">
+				Код:
+			</label>
+			<div class="col-lg-4">[#DEVICE_TYPE_CODE#]</div>
+		</div>
+		[#endif#]
+		
+		[#if MAC!=""#]
+		<div class="form-group">
+			<label class="col-lg-3 control-label"[#if ERR_MAC#] style="color:red;font-weight:bold"[#endif#]>
+				MAC:
+			</label>
+			<div class="col-lg-4">[#MAC#]</div>
+		</div>
+		[#endif#]
+		
+		[#if MODEL!=""#]
+		<div class="form-group">
+			<label class="col-lg-3 control-label"[#if ERR_MODEL#] style="color:red;font-weight:bold"[#endif#]>
+				MODEL:
+			</label>
+			<div class="col-lg-4">[#MODEL#]</div>
+		</div>
+		[#endif#]
+		
+		[#if HW_VER!=""#]
+		<div class="form-group">
+			<label class="col-lg-3 control-label"[#if ERR_HW_VER#] style="color:red;font-weight:bold"[#endif#]>
+				HW_VER:
+			</label>
+			<div class="col-lg-4">[#HW_VER#]</div>
+		</div>
+		[#endif#]
+		
+		[#UPDATE#]
+		
+		<div class="form-group">
+			<div class="col-lg-offset-3 col-lg-4">
+				[#if ID!=""#]
+				<button type="submit" name="subm" value="Submit" class="btn btn-primary"><#LANG_SUBMIT#></button>
+				[#else ID#]
+				<button type="submit" name="subm" value="Add" class="btn btn-primary"><#LANG_ADD#></button>
+				[#endif ID#]
+				<a href="?data_source=okbit_device&view_mode=search_okbit_devices2&parent_id=<#PARENT_ID#>&parent_title=<#PARENT_TITLE#>&sub_id=<#SUB_ID#>" class="btn btn-default "><#LANG_STRING_BACK#></a>
+				<input type="hidden" name="id" value="<#ID#>">
+				<input type="hidden" name="view_mode" value="<#VIEW_MODE#>">
+				<input type="hidden" name="edit_mode" value="<#EDIT_MODE#>">
+				<input type="hidden" name="mode" value="update">
+				<input type="hidden" name="data_source" value="<#DATA_SOURCE#>">
+				<input type="hidden" name="tab" value="<#TAB#>">
+				<input type="hidden" name="$sub_id" value="111111">
+			</div>
+		</div>
+	</fieldset>
+</form>
+<!-- / Table device_okbit edit -->

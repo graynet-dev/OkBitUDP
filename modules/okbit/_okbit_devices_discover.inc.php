@@ -79,6 +79,26 @@ if ($this->mode == 'update') {
 		$in_out = explode(',',DATE_6004);
 	}
 	
+	if ($rec['DEVICE'] =='8001'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8001);
+	}
+	
+	if ($rec['DEVICE'] =='8002'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8002);
+	}
+	
+	if ($rec['DEVICE'] =='8003'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8003);
+	}
+	
+	if ($rec['DEVICE'] =='8004'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8004);
+	}
+
 	}
 
 	if ($ok) {

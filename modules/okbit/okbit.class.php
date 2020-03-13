@@ -70,14 +70,46 @@ define ('OKBIT_GATE_CODES', serialize (array(	'6000' =>	'GATE Ethernet-RS485',
 						)));
 
 
-define ('OKBIT_AHOMEBUS_CODES', serialize (array('8001' =>	'МУС-8',
-						'8002' => 	'МОС-6',
-						'8003' => 	'УМА-8',
-						'8004' => 	'МДВ-4',
-						'8005' => 	'МД6',
-						'8006' => 	'XXX',
-						'8007' => 	'IRM',
-						'8008' => 	'FAM-6'
+define ('OKBIT_AHOMEBUS_CODES', serialize (array('8001' =>	'node_1_Net_center_PC',
+						'8002' => 	'node_2_Net_center_oraPi1',
+						'8003' => 	'node_3_Net_center_oraPi2',
+						'8004' => 	'node_4_Net_center_Due1',
+						'8005' => 	'node_5_Net_center_Due2',
+						'8006' => 	'node_6_Hallway_net_center',
+						'8007' => 	'node_7_Hallway_main',
+						'8008' => 	'node_8_Hallway_light',
+						'8009' => 	'node_9_Kitchen_net_center',
+						'8010' => 	'node_10_Kitchen_main',
+						'8011' => 	'node_11_Kitchen_light',
+						'8012' => 	'node_12_WC_main',
+						'8013' => 	'node_13_WC_waterleak',
+						'8014' => 	'node_14_Bathroom_main',
+						'8015' => 	'node_15_Boxroom_main',
+						'8016' => 	'node_16_Balcony_meteo',
+						'8017' => 	'node_17_Loggia_main',
+						'8018' => 	'node_18_Loggia_recuperator',
+						'8019' => 	'node_19_Livingroom_main',
+						'8020' => 	'node_20_Bedroom_main',
+						'8021' => 	'node_21_Cabinet_main',
+						'8022' => 	'node_22',
+						'8023' => 	'node_23',
+						'8024' => 	'node_24',
+						'8025' => 	'node_25',
+						'8026' => 	'node_26',
+						'8027' => 	'node_27',
+						'8028' => 	'node_28',
+						'8029' => 	'node_29',
+						'8030' => 	'node_30',
+						'8031' => 	'node_31',
+						'8032' => 	'node_32',
+						'8033' => 	'node_33',
+						'8034' => 	'node_34',
+						'8035' => 	'node_35',
+						'8036' => 	'node_36',
+						'8037' => 	'node_37',
+						'8038' => 	'node_38',
+						'8039' => 	'node_39',
+						'8040' => 	'node_40'
 						)));
 												
 
@@ -107,6 +139,38 @@ define ('DATA_8005', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
 define ('DATA_8006', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
 define ('DATA_8007', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
 define ('DATA_8008', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8009', 'Lamp1,Lamp2,Lamp3,Lamp4,Lamp5,Lamp6,Lamp7,Lamp8');	
+define ('DATA_8010', 'S1,S2,S3,S4,S5,S6');													
+define ('DATA_8011', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8012', 'Lamp1,Level1,Lamp2,Level2,Lamp3,Level3,Lamp4,Level4');
+define ('DATA_8013', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8014', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8015', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8016', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8017', 'Lamp1,Lamp2,Lamp3,Lamp4,Lamp5,Lamp6,Lamp7,Lamp8');	
+define ('DATA_8018', 'S1,S2,S3,S4,S5,S6');													
+define ('DATA_8019', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8020', 'Lamp1,Level1,Lamp2,Level2,Lamp3,Level3,Lamp4,Level4');
+define ('DATA_8021', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8022', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8023', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8024', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8025', 'Lamp1,Lamp2,Lamp3,Lamp4,Lamp5,Lamp6,Lamp7,Lamp8');	
+define ('DATA_8026', 'S1,S2,S3,S4,S5,S6');													
+define ('DATA_8027', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8028', 'Lamp1,Level1,Lamp2,Level2,Lamp3,Level3,Lamp4,Level4');
+define ('DATA_8029', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8030', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8031', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8032', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8033', 'Lamp1,Lamp2,Lamp3,Lamp4,Lamp5,Lamp6,Lamp7,Lamp8');	
+define ('DATA_8034', 'S1,S2,S3,S4,S5,S6');													
+define ('DATA_8035', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8036', 'Lamp1,Level1,Lamp2,Level2,Lamp3,Level3,Lamp4,Level4');
+define ('DATA_8037', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8038', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');	
+define ('DATA_8039', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
+define ('DATA_8040', 'IND1,IND2,IND3,IND4,INA1,INA2,INA3,INA4');
 
 
 class okbit extends module {
@@ -317,27 +381,41 @@ class okbit extends module {
 			}
 		}
 		
-
-		
 		if ($this->data_source=='okbit_device') {
 			if ($this->view_mode=='' || $this->view_mode=='search_okbit_devices') {//вывод списка устройств
-				$this->search_okbit_devices($out, $this->parent_title, $this->parent_id);				
+				$this->search_okbit_devices($out, $this->parent_title, $this->parent_id);
 			}
-			if ($this->view_mode=='edit_okbit_device') {// Добавление/редактирование устройства вручную
+			if ($this->view_mode=='' || $this->view_mode=='search_okbit_devices2') {//вывод списка устройств
+				$this->search_okbit_devices2($out, $this->parent_title, $this->parent_id);
+			}
+			if ($this->view_mode=='edit_okbit_device') {// Добавление/редактирование устройства вручную----><------><------>
 				$this->edit_okbit_device($out, $this->id, $this->parent_title, $this->parent_id);
-			}			
-			if ($this->view_mode=='okbit_devices_discover') {// автоматический поиск устройств
+			}
+			if ($this->view_mode=='edit_okbit_device2') {// Добавление/редактирование устройства вручную----><------><------>
+				$this->edit_okbit_device($out, $this->id, $this->parent_title, $this->parent_id);
+			}
+			if ($this->view_mode=='okbit_devices_discover') {// автоматический поиск устройствnt_id);
 				$this->okbit_devices_discover($out, $this->parent_title, $this->parent_id);
-			}	
+			}
+			if ($this->view_mode=='okbit_devices_discover2') {// автоматический поиск устройствnt_id);
+				$this->okbit_devices_discover($out, $this->parent_title, $this->parent_id);
+			}
 			if ($this->view_mode=='okbit_devices_update') {// получение информации об устройстве
 				$this->okbit_devices_update($out, $this->parent_title, $this->parent_id, $this->id);
-			}				
+			}
+			if ($this->view_mode=='okbit_devices_update2') {// получение информации об устройстве
+				$this->okbit_devices_update($out, $this->parent_title, $this->parent_id, $this->id);
+			}
 			if ($this->view_mode == 'delete_okbit_device') { //Удаление устройства
 				$this->delete_okbit_device($this->id);
-				$this->redirect("?data_source=okbit_device&parent_title=$this->parent_title&parent_id=$this->parent_id");
+				$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices&parent_title=$this->parent_title&parent_id=$this->parent_id");
 			}
-			
+			if ($this->view_mode == 'delete_okbit_device2') { //Удаление устройства
+				$this->delete_okbit_device($this->id);
+				$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices2&parent_title=$this->parent_title&parent_id=$this->parent_id");
+			}
 		}
+		
 		
 		if ($this->data_source=='okbit_service') {			
 			if ($this->view_mode=='okbit_devices_discover') {// автоматический поиск устройств
@@ -503,6 +581,12 @@ class okbit extends module {
 				SQLExec("DELETE FROM okbit_data WHERE DEVICE_ID='".$cmd['ID']."' AND ETHERNET='0'");
 			}
 			SQLExec("DELETE FROM okbit_devices WHERE PARENT_ID='".$rec['ID']."'");
+		} else if($rec['MOD'] == '8000'){	
+			$rec_d = SQLSelect("SELECT * FROM okbit_devices WHERE PARENT_ID ='" . $id . "'");		
+			foreach($rec_d as $cmd) {
+				SQLExec("DELETE FROM okbit_data WHERE DEVICE_ID='".$cmd['ID']."' AND ETHERNET='0'");
+			}
+			SQLExec("DELETE FROM okbit_devices WHERE PARENT_ID='".$rec['ID']."'");
 		} else SQLExec("DELETE FROM okbit_data WHERE DEVICE_ID='".$id."' AND ETHERNET='1'");
 				
 		SQLExec("DELETE FROM okbit_gate WHERE ID='" . $id . "'");
@@ -601,6 +685,31 @@ class okbit extends module {
 			else if ($rs485['DEVICE'] == 6008){
 				$cmd_out = explode(',',DATA_6008);
 			}
+			if ($rs485['DEVICE'] == 8001){
+				$cmd_out = explode(',',DATA_8001);
+			}
+			else if ($rs485['DEVICE'] == 8002){
+				$cmd_out = explode(',',DATA_8002);
+			}
+			else if ($rs485['DEVICE'] == 8003){
+				$cmd_out = explode(',',DATA_8003);
+			}
+			else if ($rs485['DEVICE'] == 8004){
+				$cmd_out = explode(',',DATA_8004);
+			}
+			else if ($rs485['DEVICE'] == 8005){
+				$cmd_out = explode(',',DATA_8005);
+			}
+			else if ($rs485['DEVICE'] == 8006){
+				$cmd_out = explode(',',DATA_8006);
+			}
+			else if ($rs485['DEVICE'] == 8007){
+				$cmd_out = explode(',',DATA_8007);
+			}
+			else if ($rs485['DEVICE'] == 8008){
+				$cmd_out = explode(',',DATA_8008);
+			}
+
 			$s = 1;
 			foreach($cmd_out as $xxx) {
 				if ($xxx == $properties['TITLE']) $dev_in = $s;
@@ -646,6 +755,24 @@ class okbit extends module {
 		}		
 	}
 	
+	function search_okbit_devices2(&$out, $parent_title, $parent_id){			
+		global $session;
+		if ($this->owner->name == 'panel') {
+			$out['CONTROLPANEL'] = 1;		
+		}
+		$out['PARENT_TITLE'] =  $parent_title;
+		$out['PARENT_ID'] =  $parent_id;		
+		$device_code = unserialize(OKBIT_AHOMEBUS_CODES);		
+		$res = SQLSelect("SELECT * FROM `okbit_devices` WHERE `PARENT_ID` = '$parent_id' ORDER BY ID DESC");
+		if ($res[0]['ID']) {
+						$total = count($res);
+			for($i = 0; $i < $total; $i++) {
+				$dev_code = $res[$i]['DEVICE'];
+				$res[$i]['DEVICE_NAME'] = $device_code["$dev_code"];
+			}
+			$out['RES_DEVICES'] = $res;
+		}		
+	}
 	
 		
 	
@@ -677,7 +804,7 @@ class okbit extends module {
 		$this->sock_bind($ip_serv, 6600);
 		$this->udp_send($gate_sh['IP'], 6400, $data_send); // отправка пакета
 	
-		
+		/** riv need add search_okbit_devices2*/
 		$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices&parent_title=$parent_title&parent_id=$parent_id");	
 	}
 	
@@ -702,7 +829,7 @@ class okbit extends module {
 		$this->sockSetTimeout(1); //Установка таймаута для получения ответа
 		$this->sock_bind($ip_serv, 6600);
 		$this->udp_send($cmd_up_gate['IP'], 6400, $data_send); // отправка пакета
-				
+		/** riv need add search_okbit_devices2*/
 		$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices&parent_title=$parent_title&parent_id=$parent_id");
 	}
 	
@@ -1064,17 +1191,10 @@ class okbit extends module {
 				
 				if($cmd_gate['MOD'] == '6000'){				
 					$cmd_devices = SQLSelectOne("SELECT * FROM `okbit_devices` WHERE PARENT_ID='".(int)$cmd_gate['ID']."' AND SUB_ID='".(int)$udp_package['subto_id']. "' AND DEVICE_ID='".(int)$udp_package['id']. "'");
-					
-
-					
-					
 					if ($cmd_devices){
 						$cmd_devices['STATUS'] = 1;
 						$cmd_devices['UPDATED'] = date('Y-m-d H:i:s');
 						SQLUpdate('okbit_devices', $cmd_devices);
-					
-					
-					
 						if ($cmd_devices['DEVICE'] == 6001){
 							$cmd_dev = explode(',',DATA_6001);
 						}
@@ -1098,6 +1218,42 @@ class okbit extends module {
 						}
 						else if ($cmd_devices['DEVICE'] == 6008){
 							$cmd_dev = explode(',',DATA_6008);
+						}					
+						$com_reg = $cmd_dev[$udp_package['vol_1'] - 1]; //вычисляем топик okbit_date по номмеру регистра
+						
+						$this->processCommand($cmd_gate['MOD'],$cmd_devices['ID'], $com_reg, $udp_package['vol_2']);//передаем данные на присвоение 
+					}	
+					if ($this->config['API_LOG_DEBMES'])DebMes('UDP parsing: GATE - '. $cmd_gate['MOD'] .'  DEVICE_ID - '. $cmd_devices['DEVICE_ID']. ' REG - ' .$com_reg. ' VOL - ' .$udp_package['vol_2'], 'okbit');
+				}
+				else if($cmd_gate['MOD'] == '8000'){				
+					$cmd_devices = SQLSelectOne("SELECT * FROM `okbit_devices` WHERE PARENT_ID='".(int)$cmd_gate['ID']."' AND SUB_ID='".(int)$udp_package['subto_id']. "' AND DEVICE_ID='".(int)$udp_package['id']. "'");
+					if ($cmd_devices){
+						$cmd_devices['STATUS'] = 1;
+						$cmd_devices['UPDATED'] = date('Y-m-d H:i:s');
+						SQLUpdate('okbit_devices', $cmd_devices);
+						if ($cmd_devices['DEVICE'] == 8001){
+							$cmd_dev = explode(',',DATA_8001);
+						}
+						else if ($cmd_devices['DEVICE'] == 8002){
+							$cmd_dev = explode(',',DATA_8002);
+						}
+						else if ($cmd_devices['DEVICE'] == 8003){
+							$cmd_dev = explode(',',DATA_8003);
+						}
+						else if ($cmd_devices['DEVICE'] == 8004){
+							$cmd_dev = explode(',',DATA_8004);
+						}
+						else if ($cmd_devices['DEVICE'] == 8005){
+							$cmd_dev = explode(',',DATA_8005);
+						}
+						else if ($cmd_devices['DEVICE'] == 8006){
+							$cmd_dev = explode(',',DATA_8006);
+						}
+						else if ($cmd_devices['DEVICE'] == 8007){
+							$cmd_dev = explode(',',DATA_8007);
+						}
+						else if ($cmd_devices['DEVICE'] == 8008){
+							$cmd_dev = explode(',',DATA_8008);
 						}					
 						$com_reg = $cmd_dev[$udp_package['vol_1'] - 1]; //вычисляем топик okbit_date по номмеру регистра
 						
@@ -1235,6 +1391,92 @@ class okbit extends module {
 					
 					
 				}
+				else if (in_array($udp_package['device'], array(8001, 8002, 8003, 8004, 8005, 8007, 8008))){//Обработчик девайса. При добавлении девайся, нужно указать сюда код модуля
+					if ($this->config['API_LOG_DEBMES'])DebMes('!!!Это деaHomeBus вайс RS485!!!, MOD - '.$udp_package['device'], 'okbit');
+					
+					$table_name = 'okbit_devices';
+					
+					if ($this->config['API_LOG_DEBMES'])DebMes('<<<<ИЩИМ СОВПАДЕНИЕ ПО СЕРИЙНИКУ>>> ', 'okbit');
+					$rec = SQLSelectOne("SELECT * FROM $table_name WHERE SN='".DBSafe($udp_package['vol_3'] . sprintf("%05d", $udp_package['vol_4']))."'");
+					if (!$rec['SN']) {
+						if ($this->config['API_LOG_DEBMES'])DebMes('<<<<ПОИСК ПО ID>>>> ', 'okbit');
+						$rec = SQLSelectOne("SELECT * FROM $table_name WHERE DEVICE_ID='".$udp_package['id']."'");
+						if ($this->config['API_LOG_DEBMES'])DebMes('ID'.$rec['DEVICE_ID'], 'okbit');
+					}
+					
+					
+				
+					$rec['STATUS'] = 1;
+					$rec['UPDATED'] = date('Y-m-d H:i:s');
+					$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
+					
+					$table_name_ip = 'okbit_gate';
+					
+					$rec_gate_ip = SQLSelectOne("SELECT * FROM $table_name_ip WHERE IP='".DBSafe($gate_ip)."'");
+					if ($this->config['API_LOG_DEBMES'])DebMes('ID Шлюза в базе, для данного девайса - '.$rec_gate_ip['ID'], 'okbit');
+
+					
+					if ($rec['SN'] || $rec['DEVICE_ID'] == $udp_package['id']) {
+						$rec['SUB_ID'] = $udp_package['sub_id'];
+						$rec['DEVICE_ID'] = $udp_package['id'];
+						$rec['SN'] = $udp_package['vol_3'] . sprintf("%05d", $udp_package['vol_4']);
+						$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
+						if ($this->config['API_LOG_DEBMES']) DebMes('Auto params for device ' , 'okbit');
+						$rec['SN'] = SQLUpdate($table_name, $rec);
+					}
+
+					else {
+						$rec = null;
+						$rec['STATUS'] = 1;
+						$rec['UPDATED'] = date('Y-m-d H:i:s');	
+						$rec['PARENT_ID'] = $rec_gate_ip['ID'];
+						$rec['SUB_ID'] = $udp_package['sub_id'];
+						$rec['DEVICE_ID'] = $udp_package['id'];
+						$rec['DEVICE'] = $udp_package['device'];
+						$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
+						$rec['SN'] = $udp_package['vol_3'] . sprintf("%05d", $udp_package['vol_4']);
+						$rec['ID'] = SQLInsert($table_name, $rec);													
+						if ($this->config['API_LOG_DEBMES']) DebMes('Add devices' , 'okbit');
+						
+						if ($udp_package['device'] == 8001){
+							$cmd_dev = explode(',',DATA_8001);
+						}
+						else if ($udp_package['device'] == 8002){
+							$cmd_dev = explode(',',DATA_8002);
+						}
+						else if ($udp_package['device'] == 8003){
+							$cmd_dev = explode(',',DATA_8003);
+						}
+						else if ($udp_package['device'] == 8004){
+							$cmd_dev = explode(',',DATA_8004);
+						}
+						else if ($udp_package['device'] == 8005){
+							$cmd_dev = explode(',',DATA_8005);
+						}
+						else if ($udp_package['device'] == 8006){
+							$cmd_dev = explode(',',DATA_8006);
+						}
+						else if ($udp_package['device'] == 8007){
+							$cmd_dev = explode(',',DATA_8007);
+						}
+						else if ($udp_package['device'] == 8008){
+							$cmd_dev = explode(',',DATA_8008);
+						}
+
+						foreach($cmd_dev as $cmd) {
+							
+									$cmd_rec = array();
+									$cmd_rec['TITLE'] = $cmd;
+									$cmd_rec['ETHERNET'] = 0;
+									$cmd_rec['DEVICE_ID'] = $rec['ID'];
+									SQLInsert('okbit_data', $cmd_rec);								
+						}
+						
+						
+					}
+					
+					
+				}
 				
 				else {//Обработчик Шлюзов.
 					$table_name = 'okbit_gate';
@@ -1281,6 +1523,9 @@ class okbit extends module {
 							SQLInsert($table_name, $rec);
 							
 							if ($rec['MOD'] =='6000'){						
+								if ($this->config['API_LOG_DEBMES']) DebMes('Auto add new gate ' . $deb_title . ' with IP ' . $rec['IP'], 'okbit');
+							}
+							else if ($rec['MOD'] =='8000'){						
 								if ($this->config['API_LOG_DEBMES']) DebMes('Auto add new gate ' . $deb_title . ' with IP ' . $rec['IP'], 'okbit');
 							}
 							else {
@@ -1353,6 +1598,9 @@ class okbit extends module {
 	function processCommand($mod, $device_id, $command, $value = 0, $params = 0) {
 		
 		if($mod == '6000'){
+			$cmd_rec = SQLSelectOne("SELECT * FROM `okbit_data` WHERE DEVICE_ID=".(int)$device_id." AND TITLE LIKE '".DBSafe($command)."' AND ETHERNET='0'");
+		}
+		else if($mod == '6000'){
 			$cmd_rec = SQLSelectOne("SELECT * FROM `okbit_data` WHERE DEVICE_ID=".(int)$device_id." AND TITLE LIKE '".DBSafe($command)."' AND ETHERNET='0'");
 		}
 		else $cmd_rec = SQLSelectOne("SELECT * FROM `okbit_data` WHERE DEVICE_ID=".(int)$device_id." AND TITLE LIKE '".DBSafe($command)."' AND ETHERNET='1'");

@@ -67,6 +67,22 @@
 			$cmd_out = explode(',',DATE_6004);		
 		}
 		
+		if ($rs_id['DEVICE'] == 8001){//
+			$cmd_out = explode(',',DATE_8001);		
+		}
+		
+		else if ($rs_id['DEVICE'] == 8002){//
+			$cmd_out = explode(',',DATE_8002);		
+		}
+		
+		else if ($rs_id['DEVICE'] == 8003){//
+			$cmd_out = explode(',',DATE_8003);		
+		}
+		
+		else if ($rs_id['DEVICE'] == 8004){//
+			$cmd_out = explode(',',DATE_8004);		
+		}
+		
 		$s = 1;
 		foreach($cmd_out as $xxx) {
 			if ($xxx == $properties['TITLE']) $dev_in = $s;

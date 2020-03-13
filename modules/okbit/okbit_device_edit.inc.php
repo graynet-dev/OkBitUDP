@@ -88,6 +88,29 @@ if ($this->mode == 'update') {
 			$in_out = explode(',',DATA_6006);
 		}
 		
+		if ($rec['DEVICE'] =='8001'){
+			$in_out = explode(',',DATA_8001);
+		}
+	
+		else if ($rec['DEVICE'] =='8002'){
+			$in_out = explode(',',DATA_8002);
+		}
+		
+		else if ($rec['DEVICE'] =='8003'){
+			$in_out = explode(',',DATA_8003);
+		}
+		
+		else if ($rec['DEVICE'] =='8004'){
+			$in_out = explode(',',DATA_8004);
+		}
+		
+		else if ($rec['DEVICE'] =='8005'){
+			$in_out = explode(',',DATA_8005);
+		}
+		
+		else if ($rec['DEVICE'] =='8006'){
+			$in_out = explode(',',DATA_8006);
+		}
 				
 	}
 

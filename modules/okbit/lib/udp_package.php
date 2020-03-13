@@ -85,6 +85,22 @@
 					$cmd_dev = explode(',',DATE_6004);		
 				}
 				
+				if ($cmd_devices['DEVICE'] == 8001){
+					$cmd_dev = explode(',',DATE_8001);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8002){
+					$cmd_dev = explode(',',DATE_8004);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8003){
+					$cmd_dev = explode(',',DATE_8004);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8004){
+					$cmd_dev = explode(',',DATE_8004);		
+				}
+				
 				$com_reg = $cmd_dev[$udp_package['vol_1'] - 1]; //вычисляем топик okbit_date по номмеру регистра
 								
 				$this->processCommand($cmd_devices['ID'], $com_reg, $udp_package['vol_2']);	

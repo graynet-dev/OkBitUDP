@@ -44,6 +44,13 @@ if ($this->mode == 'update') {
 				}
 			SQLExec("DELETE FROM okbit_devices WHERE PARENT_ID='".$rec['ID']."'");				
 			}
+			if($rec['MOD'] == '8000'){
+				$rec_d = SQLSelect("SELECT * FROM okbit_devices WHERE PARENT_ID ='".$rec['ID']."'");		
+				foreach($rec_d as $cmd) {
+					SQLExec("DELETE FROM okbit_data WHERE DEVICE_ID='".$cmd['ID']."' AND ETHERNET='0'");
+				}
+			SQLExec("DELETE FROM okbit_devices WHERE PARENT_ID='".$rec['ID']."'");				
+			}
 			$temp_sql = SQLSelectOne("SELECT * FROM `okbit_data` WHERE DEVICE_ID='$id' AND ETHERNET='1'");
 			if ($temp_sql)SQLExec("DELETE FROM `okbit_data`  WHERE DEVICE_ID='$id' AND ETHERNET='1'");
 		}			

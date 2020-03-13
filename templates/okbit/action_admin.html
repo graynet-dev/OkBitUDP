@@ -114,8 +114,9 @@
 	
 	<!-- table okbit_gate edit -->
 	[#if VIEW_MODE="edit_okbit_gate"#]
-	
+			
 		[#if ID!="" && MOD!="6000"#]
+		[#if ID!="" && MOD!="8000"#]
 			[#if TITLE!=""#]<h4>[#TITLE#]</h4>[#endif TITLE#]
 			<ul class="nav nav-tabs">
 				<li[#if TAB=""#] class="active"[#endif#]>
@@ -130,7 +131,7 @@
 			</ul>
 			&nbsp;<br/>
 		[#endif ID && MOD#]
-		
+		[#endif ID && MOD#]
 		
 		[#if MOD="6000"#]
 				<ul class="nav nav-tabs">
@@ -144,6 +145,17 @@
 				&nbsp;<br/>
 				[#endif MOD#]
 		
+		[#if MOD="8000"#]
+				<ul class="nav nav-tabs">
+					<li[#if TAB=""#] class="active"[#endif#]>
+						<a href="?data_source=<#DATA_SOURCE#>&view_mode=<#VIEW_MODE#>&id=<#ID#>&tab="><#LANG_GENERAL#></a>
+					</li>
+					<li[#if TAB="data_else"#] class="active"[#endif#]>
+						<a href="?data_source=<#DATA_SOURCE#>&view_mode=<#VIEW_MODE#>&id=<#ID#>&tab=data_else">Настройки шлюза</a>				
+					</li>
+				</ul>
+				&nbsp;<br/>
+				[#endif MOD#]
 		
 		
 		[#if TAB=""#]
@@ -179,13 +191,16 @@
 	[#if VIEW_MODE="search_okbit_devices" || VIEW_MODE=""#]
 		[#inc okbit_devices_search_admin.html#]
 	[#endif VIEW_MODE#]
+	[#if VIEW_MODE="search_okbit_devices2" || VIEW_MODE=""#]
+		[#inc okbit_devices_search_admin2.html#]
+	[#endif VIEW_MODE#]
 	<!-- / table okbit_devices search -->
 	
 	<!-- table okbit_device edit -->
 	[#if VIEW_MODE="edit_okbit_device"#]
 		
 		[#if ID=""#]
-		<h4><#PARENT_TITLE#> / Добавить модуль</h4>
+		<h4><#PARENT_TITLE#> - Добавить модуль</h4>
 		
 		[#else ID#]
 		<h4><#PARENT_TITLE#> / <#TITLE#></h4>
@@ -209,6 +224,39 @@
 		[#if TAB="data"#]
 			&nbsp;<br/><br/>
 			[#inc okbit_device_edit_data.html#]
+		[#endif TAB#]
+
+	[#endif VIEW_MODE#]
+	<!-- / table okbit_device edit -->
+	
+	<!-- table okbit_device edit2 -->
+	[#if VIEW_MODE="edit_okbit_device2"#]
+		
+		[#if ID=""#]
+		<h4><#PARENT_TITLE#> - Add aHomeBus device</h4>
+		
+		[#else ID#]
+		<h4><#PARENT_TITLE#> / <#TITLE#></h4>
+		
+		[#endif ID#]
+	
+		[#if ID!=""#]		
+			<ul class="nav nav-tabs">
+				<li[#if TAB=""#] class="active"[#endif#]>
+					<a href="?data_source=<#DATA_SOURCE#>&view_mode=<#VIEW_MODE#>&id=<#ID#>&tab=&parent_id=<#PARENT_ID#>&parent_title=<#PARENT_TITLE#>"><#LANG_GENERAL#></a>
+				</li>
+				<li[#if TAB="data"#] class="active"[#endif#]>
+					<a href="?data_source=<#DATA_SOURCE#>&view_mode=<#VIEW_MODE#>&id=<#ID#>&tab=data&parent_id=<#PARENT_ID#>&parent_title=<#PARENT_TITLE#>"><#LANG_DATA#></a>
+				</li>
+			</ul>
+		[#endif ID#]		
+		[#if TAB=""#]
+			&nbsp;<br/><br/>
+			[#inc okbit_device_edit2.html#]
+		[#endif TAB#]		
+		[#if TAB="data"#]
+			&nbsp;<br/><br/>
+			[#inc okbit_device_edit_data2.html#]
 		[#endif TAB#]
 
 	[#endif VIEW_MODE#]
