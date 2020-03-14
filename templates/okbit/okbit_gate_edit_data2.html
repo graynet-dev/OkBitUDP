@@ -1,8 +1,8 @@
 
-<!-- Table 'okbit_device_date2' edit -->
+<!-- Table 'okbit_gate_date' edit -->
 <form action="?" method="post" enctype="multipart/form-data" name="frmEdit" class="form-horizontal">
 
-	<input type="hidden" name="data_source" value="okbit_device">		
+	<input type="hidden" name="data_source" value="okbit_devices">		
 	<input type="hidden" name="parent_title" value="[#PARENT_TITLE#]">
 	<input type="hidden" name="parent_id" value="[#PARENT_ID#]">
 
@@ -21,7 +21,7 @@
 					<tr>
 						<td><#LANG_TITLE#></td>
 						<td><#LANG_VALUE#></td>
-						<td>Устройство</td>
+						<td><#LANG_DEVICE#></td>
 						<td><#LANG_LINKED_OBJECT#></td>
 						<td><#LANG_LINKED_PROPERTY#></td>
 						<td><#LANG_METHOD#></td>
@@ -32,10 +32,10 @@
 					<tr>
 						<td valign="top">[#TITLE#]</td>
 						<!--<td valign="top">[#VALUE#]</td>-->
-						<td valign="top"><div style="width:180px"><div style="word-break:break-all">[#VALUE#]</div></div></td>
+						<td valign="top"><div style="word-break:break-all">[#VALUE#]</div></td>
 						<td>
 						   [#if SDEVICE_TYPE!=""#]
-						   [#module name="devices" action="link" type="<#PROPERTIES.SDEVICE_TYPE#>" prefix="miio" source_table="okbit_data" source_table_id="<#PROPERTIES.ID#>" linked_object="<#PROPERTIES.LINKED_OBJECT#>"#]
+						   [#module name="devices" action="link" type="<#PROPERTIES.SDEVICE_TYPE#>" prefix="OkBit" source_table="okbit_data" source_table_id="<#PROPERTIES.ID#>" linked_object="<#PROPERTIES.LINKED_OBJECT#>"#]
 						   [#else#]
 						   &nbsp;
 						   [#endif#]
@@ -45,10 +45,14 @@
 						<td valign="top"><input type="text" name="linked_method[#ID#]" id="linked_method[#ID#]" value="[#LINKED_METHOD#]"></td>
 						[#module name="linkedobject" object_field="linked_object<#PROPERTIES.ID#>" property_field="linked_property<#PROPERTIES.ID#>" method_field="linked_method<#PROPERTIES.ID#>" width="200"#]
 						<td valign="top">[#UPDATED#]</td>
-						<td><a href="?data_source=okbit_device&parent_id=<#PARENT_ID#>&parent_title=<#PARENT_TITLE#>&id=<#ID#>&tab=<#TAB#>&view_mode=<#VIEW_MODE#>&delete_id=[#ID#]" onClick="return confirm('<#LANG_ARE_YOU_SURE#>');" class="btn btn-default"><i class="glyphicon glyphicon-remove"></i></td>
+						<td><a href="?data_source=okbit_gate&id=<#ID#>&tab=<#TAB#>&view_mode=<#VIEW_MODE#>&delete_id=[#ID#]" 
+						onClick="return confirm('<#LANG_ARE_YOU_SURE#>');" class="btn btn-default"><i class="glyphicon glyphicon-remove"></i></td>
 					</tr>
+					
 				 [#end PROPERTIES#]
 				</table> 
+				
+				
 			</div>
 		</div>
 		<div class="form-group">
@@ -58,7 +62,7 @@
 				[#else ID#]
 				<button type="submit" name="subm" value="Add" class="btn btn-primary"><#LANG_ADD#></button>
 				[#endif ID#]
-				<a href="?data_source=okbit_device&view_mode=search_okbit_devices2&parent_id=<#PARENT_ID#>&parent_title=<#PARENT_TITLE#>" class="btn btn-default "><#LANG_STRING_BACK#></a>
+				<a href="?data_source=<#DATA_SOURCE#>" class="btn btn-default "><#LANG_STRING_BACK#></a>
 				<input type="hidden" name="id" value="<#ID#>">
 				<input type="hidden" name="view_mode" value="<#VIEW_MODE#>">
 				<input type="hidden" name="edit_mode" value="<#EDIT_MODE#>">
@@ -70,5 +74,5 @@
 	</fieldset>
 </form>
 
-<!-- / Table 'okbit_device_date' edit -->
+<!-- / Table 'okbit_gate_date' edit -->
 

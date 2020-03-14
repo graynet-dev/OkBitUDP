@@ -90,16 +90,162 @@
 				}
 				
 				if ($cmd_devices['DEVICE'] == 8002){
-					$cmd_dev = explode(',',DATE_8004);		
+					$cmd_dev = explode(',',DATE_8002);		
 				}
 				
 				if ($cmd_devices['DEVICE'] == 8003){
-					$cmd_dev = explode(',',DATE_8004);		
+					$cmd_dev = explode(',',DATE_8003);		
 				}
 				
 				if ($cmd_devices['DEVICE'] == 8004){
 					$cmd_dev = explode(',',DATE_8004);		
 				}
+				
+				if ($cmd_devices['DEVICE'] == 8005){
+					$cmd_dev = explode(',',DATE_8005);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8006){
+					$cmd_dev = explode(',',DATE_8006);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8007){
+					$cmd_dev = explode(',',DATE_8007);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8008){
+					$cmd_dev = explode(',',DATE_8008);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8009){
+					$cmd_dev = explode(',',DATE_8009);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8010){
+					$cmd_dev = explode(',',DATE_8010);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8011){
+					$cmd_dev = explode(',',DATE_8011);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8012){
+					$cmd_dev = explode(',',DATE_8012);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8013){
+					$cmd_dev = explode(',',DATE_8013);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8014){
+					$cmd_dev = explode(',',DATE_8014);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8015){
+					$cmd_dev = explode(',',DATE_8015);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8016){
+					$cmd_dev = explode(',',DATE_8016);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8017){
+					$cmd_dev = explode(',',DATE_8017);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8018){
+					$cmd_dev = explode(',',DATE_8018);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8019){
+					$cmd_dev = explode(',',DATE_8019);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8020){
+					$cmd_dev = explode(',',DATE_8020);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8021){
+					$cmd_dev = explode(',',DATE_8021);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8022){
+					$cmd_dev = explode(',',DATE_8022);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8023){
+					$cmd_dev = explode(',',DATE_8023);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8024){
+					$cmd_dev = explode(',',DATE_8024);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8025){
+					$cmd_dev = explode(',',DATE_8025);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8026){
+					$cmd_dev = explode(',',DATE_8026);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8027){
+					$cmd_dev = explode(',',DATE_8027);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8028){
+					$cmd_dev = explode(',',DATE_8028);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8029){
+					$cmd_dev = explode(',',DATE_8029);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8030){
+					$cmd_dev = explode(',',DATE_8030);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8031){
+					$cmd_dev = explode(',',DATE_8031);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8032){
+					$cmd_dev = explode(',',DATE_8032);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8033){
+					$cmd_dev = explode(',',DATE_8033);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8034){
+					$cmd_dev = explode(',',DATE_8034);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8035){
+					$cmd_dev = explode(',',DATE_8035);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8036){
+					$cmd_dev = explode(',',DATE_8036);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8037){
+					$cmd_dev = explode(',',DATE_8037);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8038){
+					$cmd_dev = explode(',',DATE_8038);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8039){
+					$cmd_dev = explode(',',DATE_8039);		
+				}
+				
+				if ($cmd_devices['DEVICE'] == 8040){
+					$cmd_dev = explode(',',DATE_8040);		
+				}
+				
+				
 				
 				$com_reg = $cmd_dev[$udp_package['vol_1'] - 1]; //вычисляем топик okbit_date по номмеру регистра
 								

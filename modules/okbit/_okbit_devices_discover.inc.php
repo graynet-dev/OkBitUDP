@@ -98,7 +98,188 @@ if ($this->mode == 'update') {
 		$in_out = '';
 		$in_out = explode(',',DATE_8004);
 	}
-
+	
+	if ($rec['DEVICE'] =='8005'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8005);
+	}
+	
+	if ($rec['DEVICE'] =='8006'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8006);
+	}
+	
+	if ($rec['DEVICE'] =='8007'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8007);
+	}
+	
+	if ($rec['DEVICE'] =='8008'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8008);
+	}
+	
+	if ($rec['DEVICE'] =='8009'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8009);
+	}
+	
+	if ($rec['DEVICE'] =='8010'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8010);
+	}
+	
+	if ($rec['DEVICE'] =='8011'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8011);
+	}
+	
+	if ($rec['DEVICE'] =='8012'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8012);
+	}
+	
+	if ($rec['DEVICE'] =='8013'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8013);
+	}
+	
+	if ($rec['DEVICE'] =='8014'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8014);
+	}
+	
+	if ($rec['DEVICE'] =='8015'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8015);
+	}
+	
+	if ($rec['DEVICE'] =='8016'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8016);
+	}
+	
+	if ($rec['DEVICE'] =='8017'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8017);
+	}
+	
+	if ($rec['DEVICE'] =='8018'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8018);
+	}
+	
+	if ($rec['DEVICE'] =='8019'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8019);
+	}
+	
+	if ($rec['DEVICE'] =='8020'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8020);
+	}
+	
+	if ($rec['DEVICE'] =='8021'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8021);
+	}
+	
+	if ($rec['DEVICE'] =='8022'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8022);
+	}
+	
+	if ($rec['DEVICE'] =='8023'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8023);
+	}
+	
+	if ($rec['DEVICE'] =='8024'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8024);
+	}
+	
+	if ($rec['DEVICE'] =='8025'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8025);
+	}
+	
+	if ($rec['DEVICE'] =='8026'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8026);
+	}
+	
+	if ($rec['DEVICE'] =='8027'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8027);
+	}
+	
+	if ($rec['DEVICE'] =='8028'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8028);
+	}
+	
+	if ($rec['DEVICE'] =='8029'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8029);
+	}
+	
+	if ($rec['DEVICE'] =='8030'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8030);
+	}
+	
+	if ($rec['DEVICE'] =='8031'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8031);
+	}
+	
+	if ($rec['DEVICE'] =='8032'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8032);
+	}
+	
+	if ($rec['DEVICE'] =='8033'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8033);
+	}
+	
+	if ($rec['DEVICE'] =='8034'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8034);
+	}
+	
+	if ($rec['DEVICE'] =='8035'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8035);
+	}
+	
+	if ($rec['DEVICE'] =='8036'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8036);
+	}
+	
+	if ($rec['DEVICE'] =='8037'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8037);
+	}
+	
+	if ($rec['DEVICE'] =='8038'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8038);
+	}
+	
+	if ($rec['DEVICE'] =='8039'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8039);
+	}
+	
+	if ($rec['DEVICE'] =='8040'){
+		$in_out = '';
+		$in_out = explode(',',DATE_8040);
+	}
+	
+	
 	}
 
 	if ($ok) {

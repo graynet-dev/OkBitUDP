@@ -379,6 +379,25 @@ class okbit extends module {
 				$this->delete_okbit_gate($this->id);
 				$this->redirect("?data_source=okbit_gate");
 			}
+			
+			if ($this->view_mode=='discover_okbit_gate2') {// автоматический поиск шлюзов
+				$this->discover_okbit_gate($out, $this->id);
+			}
+			if ($this->view_mode=='edit_okbit_gate2') {// редактирование/ручное добавление шлюза
+				$this->edit_okbit_gate($out, $this->id);
+				$json123 = json_encode($out);
+				if ($this->config['API_LOG_DEBMES']) DebMes("!!!POST!!!(): " . $json123, 'okbit');
+			}			
+			if ($this->view_mode=='update_gate2') {// Получение информации о шлюзе
+				$this->okbit_update_gate($out, $this->id);
+			}	
+			if ($this->view_mode=='bind_gate2') {// подвязка шлюза к серверу мажордомо
+				$this->okbit_bind_gate($out, $this->id);
+			}				
+			if ($this->view_mode=='delete_okbit_gate2') {//удаление шлюза
+				$this->delete_okbit_gate($this->id);
+				$this->redirect("?data_source=okbit_gate");
+			}
 		}
 		
 		if ($this->data_source=='okbit_device') {
@@ -398,13 +417,13 @@ class okbit extends module {
 				$this->okbit_devices_discover($out, $this->parent_title, $this->parent_id);
 			}
 			if ($this->view_mode=='okbit_devices_discover2') {// автоматический поиск устройствnt_id);
-				$this->okbit_devices_discover($out, $this->parent_title, $this->parent_id);
+				$this->okbit_devices_discover2($out, $this->parent_title, $this->parent_id);
 			}
 			if ($this->view_mode=='okbit_devices_update') {// получение информации об устройстве
 				$this->okbit_devices_update($out, $this->parent_title, $this->parent_id, $this->id);
 			}
 			if ($this->view_mode=='okbit_devices_update2') {// получение информации об устройстве
-				$this->okbit_devices_update($out, $this->parent_title, $this->parent_id, $this->id);
+				$this->okbit_devices_update2($out, $this->parent_title, $this->parent_id, $this->id);
 			}
 			if ($this->view_mode == 'delete_okbit_device') { //Удаление устройства
 				$this->delete_okbit_device($this->id);
@@ -420,6 +439,9 @@ class okbit extends module {
 		if ($this->data_source=='okbit_service') {			
 			if ($this->view_mode=='okbit_devices_discover') {// автоматический поиск устройств
 				$this->okbit_devices_discover($out, $this->parent_title, $this->parent_id);
+			}	
+			if ($this->view_mode=='okbit_devices_discover2') {// автоматический поиск устройств
+				$this->okbit_devices_discover2($out, $this->parent_title, $this->parent_id);
 			}	
 			
 		}
@@ -709,6 +731,99 @@ class okbit extends module {
 			else if ($rs485['DEVICE'] == 8008){
 				$cmd_out = explode(',',DATA_8008);
 			}
+			else if ($rs485['DEVICE'] == 8009){
+				$cmd_out = explode(',',DATA_8009);
+			}
+			else if ($rs485['DEVICE'] == 8010){
+				$cmd_out = explode(',',DATA_8010);
+			}
+			else if ($rs485['DEVICE'] == 8011){
+				$cmd_out = explode(',',DATA_8011);
+			}
+			else if ($rs485['DEVICE'] == 8012){
+				$cmd_out = explode(',',DATA_8012);
+			}
+			else if ($rs485['DEVICE'] == 8013){
+				$cmd_out = explode(',',DATA_8013);
+			}
+			else if ($rs485['DEVICE'] == 80014){
+				$cmd_out = explode(',',DATA_8014);
+			}
+			else if ($rs485['DEVICE'] == 8015){
+				$cmd_out = explode(',',DATA_8015);
+			}
+			else if ($rs485['DEVICE'] == 8016){
+				$cmd_out = explode(',',DATA_8016);
+			}
+			else if ($rs485['DEVICE'] == 8017){
+				$cmd_out = explode(',',DATA_8017);
+			}
+			else if ($rs485['DEVICE'] == 8018){
+				$cmd_out = explode(',',DATA_8018);
+			}
+			else if ($rs485['DEVICE'] == 8019){
+				$cmd_out = explode(',',DATA_8019);
+			}
+			else if ($rs485['DEVICE'] == 8020){
+				$cmd_out = explode(',',DATA_8021);
+			}
+			else if ($rs485['DEVICE'] == 8022){
+				$cmd_out = explode(',',DATA_8022);
+			}
+			else if ($rs485['DEVICE'] == 8023){
+				$cmd_out = explode(',',DATA_8023);
+			}
+			else if ($rs485['DEVICE'] == 8024){
+				$cmd_out = explode(',',DATA_8024);
+			}
+			else if ($rs485['DEVICE'] == 8025){
+				$cmd_out = explode(',',DATA_8025);
+			}
+			else if ($rs485['DEVICE'] == 8026){
+				$cmd_out = explode(',',DATA_8026);
+			}
+			else if ($rs485['DEVICE'] == 8027){
+				$cmd_out = explode(',',DATA_8027);
+			}
+			else if ($rs485['DEVICE'] == 8028){
+				$cmd_out = explode(',',DATA_8028);
+			}
+			else if ($rs485['DEVICE'] == 8029){
+				$cmd_out = explode(',',DATA_8029);
+			}
+			else if ($rs485['DEVICE'] == 8030){
+				$cmd_out = explode(',',DATA_8030);
+			}
+			else if ($rs485['DEVICE'] == 8031){
+				$cmd_out = explode(',',DATA_8031);
+			}
+			else if ($rs485['DEVICE'] == 8032){
+				$cmd_out = explode(',',DATA_8032);
+			}
+			else if ($rs485['DEVICE'] == 8033){
+				$cmd_out = explode(',',DATA_8033);
+			}
+			else if ($rs485['DEVICE'] == 8034){
+				$cmd_out = explode(',',DATA_8034);
+			}
+			else if ($rs485['DEVICE'] == 8035){
+				$cmd_out = explode(',',DATA_8035);
+			}
+			else if ($rs485['DEVICE'] == 8036){
+				$cmd_out = explode(',',DATA_8036);
+			}
+			else if ($rs485['DEVICE'] == 8037){
+				$cmd_out = explode(',',DATA_8037);
+			}
+			else if ($rs485['DEVICE'] == 8038){
+				$cmd_out = explode(',',DATA_8038);
+			}
+			else if ($rs485['DEVICE'] == 8039){
+				$cmd_out = explode(',',DATA_8039);
+			}
+			else if ($rs485['DEVICE'] == 8040){
+				$cmd_out = explode(',',DATA_8040);
+			}
 
 			$s = 1;
 			foreach($cmd_out as $xxx) {
@@ -808,6 +923,22 @@ class okbit extends module {
 		$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices&parent_title=$parent_title&parent_id=$parent_id");	
 	}
 	
+	function okbit_devices_discover2(&$out, $parent_title, $parent_id) {
+		
+		if($this->config['API_IP']) $ip_serv = $this->config['API_IP'];	
+		else $ip_serv = '0.0.0.0';		
+
+		$gate_sh = SQLSelectOne("SELECT * FROM `okbit_gate` WHERE ID='".$parent_id."'");//запрос для получения IP шлюза	
+		$data_send = $this->udp_msg_packet($this->config['API_LOG_DEBMES'],0, 0, 65534, 20, 0, 0); //сборка UDP OkBit пакета		
+		$this->sock_create(); //Создание UDP сокета
+		$this->sockSetTimeout(10); //Установка таймаута для получения ответа
+		$this->sock_bind($ip_serv, 6600);
+		$this->udp_send($gate_sh['IP'], 6400, $data_send); // отправка пакета
+	
+		/** riv need add search_okbit_devices2*/
+		$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices2&parent_title=$parent_title&parent_id=$parent_id");	
+	}
+	
 	
 	
 	/**
@@ -833,6 +964,22 @@ class okbit extends module {
 		$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices&parent_title=$parent_title&parent_id=$parent_id");
 	}
 	
+	function okbit_devices_update2(&$out, $parent_title, $parent_id, $id) {
+		
+		if($this->config['API_IP']) $ip_serv = $this->config['API_IP'];	
+		else $ip_serv = '0.0.0.0';
+		
+		$cmd_up = SQLSelectOne("SELECT * FROM `okbit_devices` WHERE ID=".(int)$id);
+		$cmd_up_gate = SQLSelectOne("SELECT * FROM `okbit_gate` WHERE ID=".(int)$parent_id);		
+		
+		$data_send = $this->udp_msg_packet($this->config['API_LOG_DEBMES'],0, 0, 65534, 21, $cmd_up_gate['SUB_ID'], $cmd_up['DEVICE_ID']); //сборка UDP OkBit пакета		
+		$this->sock_create(); //Создание UDP сокета
+		$this->sockSetTimeout(1); //Установка таймаута для получения ответа
+		$this->sock_bind($ip_serv, 6600);
+		$this->udp_send($cmd_up_gate['IP'], 6400, $data_send); // отправка пакета
+		/** riv need add search_okbit_devices2*/
+		$this->redirect("?data_source=okbit_device&view_mode=search_okbit_devices2&parent_title=$parent_title&parent_id=$parent_id");
+	}
 	
 	
 	
@@ -1181,6 +1328,21 @@ class okbit extends module {
 			
 			
 			//Дальнейшие действия в зависимости от пришедшей команды в запросе (см. список команд  в udp_send.php)
+			
+			if ($udp_package['cmd'] == 11){}
+			if ($udp_package['cmd'] == 12){}
+			if ($udp_package['cmd'] == 21){}
+			
+			if ($udp_package['cmd'] == 22){
+			
+			
+			
+			}
+			if ($udp_package['cmd'] == 23){}
+			if ($udp_package['cmd'] == 24){}
+			if ($udp_package['cmd'] == 25){}
+			if ($udp_package['cmd'] == 26){}
+			
 			if ($udp_package['cmd'] == 30){ //запуск функции присвоения значениея свойства объекта
 				
 				$cmd_gate = SQLSelectOne("SELECT * FROM `okbit_gate` WHERE IP='".DBSafe($gate_ip)."'");
@@ -1254,7 +1416,106 @@ class okbit extends module {
 						}
 						else if ($cmd_devices['DEVICE'] == 8008){
 							$cmd_dev = explode(',',DATA_8008);
-						}					
+						}
+						else if ($cmd_devices['DEVICE'] == 8009){
+							$cmd_dev = explode(',',DATA_8009);
+						}
+						else if ($cmd_devices['DEVICE'] == 8010){
+							$cmd_dev = explode(',',DATA_8010);
+						}
+						else if ($cmd_devices['DEVICE'] == 8011){
+							$cmd_dev = explode(',',DATA_8011);
+						}
+						else if ($cmd_devices['DEVICE'] == 8012){
+							$cmd_dev = explode(',',DATA_8012);
+						}
+						else if ($cmd_devices['DEVICE'] == 8013){
+							$cmd_dev = explode(',',DATA_8013);
+						}
+						else if ($cmd_devices['DEVICE'] == 8014){
+							$cmd_dev = explode(',',DATA_8014);
+						}
+						else if ($cmd_devices['DEVICE'] == 8015){
+							$cmd_dev = explode(',',DATA_8015);
+						}
+						else if ($cmd_devices['DEVICE'] == 8016){
+							$cmd_dev = explode(',',DATA_8016);
+						}
+						else if ($cmd_devices['DEVICE'] == 8016){
+							$cmd_dev = explode(',',DATA_8016);
+						}
+						else if ($cmd_devices['DEVICE'] == 8017){
+							$cmd_dev = explode(',',DATA_8017);
+						}
+						else if ($cmd_devices['DEVICE'] == 8018){
+							$cmd_dev = explode(',',DATA_8018);
+						}
+						else if ($cmd_devices['DEVICE'] == 8019){
+							$cmd_dev = explode(',',DATA_8019);
+						}
+						else if ($cmd_devices['DEVICE'] == 8020){
+							$cmd_dev = explode(',',DATA_8020);
+						}
+						else if ($cmd_devices['DEVICE'] == 8021){
+							$cmd_dev = explode(',',DATA_8021);
+						}
+						else if ($cmd_devices['DEVICE'] == 8022){
+							$cmd_dev = explode(',',DATA_8022);
+						}
+						else if ($cmd_devices['DEVICE'] == 8023){
+							$cmd_dev = explode(',',DATA_8023);
+						}
+						else if ($cmd_devices['DEVICE'] == 8024){
+							$cmd_dev = explode(',',DATA_8024);
+						}
+						else if ($cmd_devices['DEVICE'] == 8025){
+							$cmd_dev = explode(',',DATA_8026);
+						}
+						else if ($cmd_devices['DEVICE'] == 8027){
+							$cmd_dev = explode(',',DATA_8027);
+						}
+						else if ($cmd_devices['DEVICE'] == 8028){
+							$cmd_dev = explode(',',DATA_8028);
+						}
+						else if ($cmd_devices['DEVICE'] == 8029){
+							$cmd_dev = explode(',',DATA_8029);
+						}
+						else if ($cmd_devices['DEVICE'] == 8030){
+							$cmd_dev = explode(',',DATA_8030);
+						}
+						else if ($cmd_devices['DEVICE'] == 8031){
+							$cmd_dev = explode(',',DATA_8031);
+						}
+						else if ($cmd_devices['DEVICE'] == 8032){
+							$cmd_dev = explode(',',DATA_8032);
+						}
+						else if ($cmd_devices['DEVICE'] == 8033){
+							$cmd_dev = explode(',',DATA_8033);
+						}
+						else if ($cmd_devices['DEVICE'] == 8034){
+							$cmd_dev = explode(',',DATA_8034);
+						}
+						else if ($cmd_devices['DEVICE'] == 8035){
+							$cmd_dev = explode(',',DATA_8035);
+						}
+						else if ($cmd_devices['DEVICE'] == 8036){
+							$cmd_dev = explode(',',DATA_8036);
+						}
+						else if ($cmd_devices['DEVICE'] == 8037){
+							$cmd_dev = explode(',',DATA_8037);
+						}
+						else if ($cmd_devices['DEVICE'] == 8038){
+							$cmd_dev = explode(',',DATA_8038);
+						}
+						else if ($cmd_devices['DEVICE'] == 8039){
+							$cmd_dev = explode(',',DATA_8039);
+						}
+						else if ($cmd_devices['DEVICE'] == 8040){
+							$cmd_dev = explode(',',DATA_8040);
+						}
+						
+						
+						
 						$com_reg = $cmd_dev[$udp_package['vol_1'] - 1]; //вычисляем топик okbit_date по номмеру регистра
 						
 						$this->processCommand($cmd_gate['MOD'],$cmd_devices['ID'], $com_reg, $udp_package['vol_2']);//передаем данные на присвоение 
@@ -1391,7 +1652,8 @@ class okbit extends module {
 					
 					
 				}
-				else if (in_array($udp_package['device'], array(8001, 8002, 8003, 8004, 8005, 8007, 8008))){//Обработчик девайса. При добавлении девайся, нужно указать сюда код модуля
+				else if (in_array($udp_package['device'], array(8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010,8011,8012,8013,8014,8015,8016,8017,8018,8019,8020,8021,8022,8023,8024,8025,8026,8027,8028,8029,8030,8031,8032,8033,8034,8035,8036,8037,8038,8039,8040))){
+				//Обработчик девайса. При добавлении девайся, нужно указать сюда код модуля
 					if ($this->config['API_LOG_DEBMES'])DebMes('!!!Это деaHomeBus вайс RS485!!!, MOD - '.$udp_package['device'], 'okbit');
 					
 					$table_name = 'okbit_devices';
@@ -1461,6 +1723,102 @@ class okbit extends module {
 						}
 						else if ($udp_package['device'] == 8008){
 							$cmd_dev = explode(',',DATA_8008);
+						}
+						else if ($udp_package['device'] == 8009){
+							$cmd_dev = explode(',',DATA_8009);
+						}
+						else if ($udp_package['device'] == 8010){
+							$cmd_dev = explode(',',DATA_8010);
+						}
+						else if ($udp_package['device'] == 8011){
+							$cmd_dev = explode(',',DATA_8011);
+						}
+						else if ($udp_package['device'] == 8012){
+							$cmd_dev = explode(',',DATA_8012);
+						}
+						else if ($udp_package['device'] == 8013){
+							$cmd_dev = explode(',',DATA_8013);
+						}
+						else if ($udp_package['device'] == 8014){
+							$cmd_dev = explode(',',DATA_8014);
+						}
+						else if ($udp_package['device'] == 8015){
+							$cmd_dev = explode(',',DATA_8015);
+						}
+						else if ($udp_package['device'] == 8016){
+							$cmd_dev = explode(',',DATA_8016);
+						}
+						else if ($udp_package['device'] == 8017){
+							$cmd_dev = explode(',',DATA_8017);
+						}
+						else if ($udp_package['device'] == 8018){
+							$cmd_dev = explode(',',DATA_8018);
+						}
+						else if ($udp_package['device'] == 8019){
+							$cmd_dev = explode(',',DATA_8019);
+						}
+						else if ($udp_package['device'] == 8020){
+							$cmd_dev = explode(',',DATA_8020);
+						}
+						else if ($udp_package['device'] == 8021){
+							$cmd_dev = explode(',',DATA_8021);
+						}
+						else if ($udp_package['device'] == 8022){
+							$cmd_dev = explode(',',DATA_8022);
+						}
+						else if ($udp_package['device'] == 8023){
+							$cmd_dev = explode(',',DATA_8023);
+						}
+						else if ($udp_package['device'] == 8024){
+							$cmd_dev = explode(',',DATA_8024);
+						}
+						else if ($udp_package['device'] == 8025){
+							$cmd_dev = explode(',',DATA_8025);
+						}
+						else if ($udp_package['device'] == 8026){
+							$cmd_dev = explode(',',DATA_8026);
+						}
+						else if ($udp_package['device'] == 8027){
+							$cmd_dev = explode(',',DATA_8027);
+						}
+						else if ($udp_package['device'] == 8028){
+							$cmd_dev = explode(',',DATA_8028);
+						}
+						else if ($udp_package['device'] == 8029){
+							$cmd_dev = explode(',',DATA_8029);
+						}
+						else if ($udp_package['device'] == 8030){
+							$cmd_dev = explode(',',DATA_8030);
+						}
+						else if ($udp_package['device'] == 8031){
+							$cmd_dev = explode(',',DATA_8031);
+						}
+						else if ($udp_package['device'] == 8032){
+							$cmd_dev = explode(',',DATA_8032);
+						}
+						else if ($udp_package['device'] == 8033){
+							$cmd_dev = explode(',',DATA_8033);
+						}
+						else if ($udp_package['device'] == 8034){
+							$cmd_dev = explode(',',DATA_8034);
+						}
+						else if ($udp_package['device'] == 8035){
+							$cmd_dev = explode(',',DATA_8035);
+						}
+						else if ($udp_package['device'] == 8036){
+							$cmd_dev = explode(',',DATA_8036);
+						}
+						else if ($udp_package['device'] == 8037){
+							$cmd_dev = explode(',',DATA_8037);
+						}
+						else if ($udp_package['device'] == 8038){
+							$cmd_dev = explode(',',DATA_8038);
+						}
+						else if ($udp_package['device'] == 8039){
+							$cmd_dev = explode(',',DATA_8039);
+						}
+						else if ($udp_package['device'] == 8040){
+							$cmd_dev = explode(',',DATA_8040);
 						}
 
 						foreach($cmd_dev as $cmd) {
@@ -1600,7 +1958,7 @@ class okbit extends module {
 		if($mod == '6000'){
 			$cmd_rec = SQLSelectOne("SELECT * FROM `okbit_data` WHERE DEVICE_ID=".(int)$device_id." AND TITLE LIKE '".DBSafe($command)."' AND ETHERNET='0'");
 		}
-		else if($mod == '6000'){
+		else if($mod == '8000'){
 			$cmd_rec = SQLSelectOne("SELECT * FROM `okbit_data` WHERE DEVICE_ID=".(int)$device_id." AND TITLE LIKE '".DBSafe($command)."' AND ETHERNET='0'");
 		}
 		else $cmd_rec = SQLSelectOne("SELECT * FROM `okbit_data` WHERE DEVICE_ID=".(int)$device_id." AND TITLE LIKE '".DBSafe($command)."' AND ETHERNET='1'");
