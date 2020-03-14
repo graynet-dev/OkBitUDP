@@ -1024,26 +1024,26 @@ class okbit extends module {
 		
 		//4F4B4249542D554450AAAA090000FFFE0014000005FD
 		
-		$date_array = array(   // Собираем массив данных для строки UDP -запроса
+		$date_array = array(// Собираем массив данных для строки UDP -запроса
 			"title"=>$this->val_set_edit("OKBIT-UDP")[0], 			// Текствое собщение протокола
 			"s_cod" => sprintf('%02X', 0xAAAA),            			// Стартовый ярлык
-			"length" => sprintf('%02X', $length),					// Длины сообщения
+			"length" => sprintf('%02X', $length),				// Длины сообщения
 			"sub_id" => sprintf('%02X', $sub_id),				// Sub ID отправителя
-			"id" => sprintf('%02X', $id),						// ID отправителя
-			"device_HI"=> sprintf('%02X', $device >> 8),		// Вырхний байт кода модуля
-			"device_LOW"=> sprintf('%02X', $device & 0xFF),	// Нижний байт кода модуля
-			"cmd_HI"=> sprintf('%02X', $cmd >> 8),			// Верхний байт команды
+			"id" => sprintf('%02X', $id),					// ID отправителя
+			"device_HI"=> sprintf('%02X', $device >> 8),			// Вырхний байт кода модуля
+			"device_LOW"=> sprintf('%02X', $device & 0xFF),			// Нижний байт кода модуля
+			"cmd_HI"=> sprintf('%02X', $cmd >> 8),				// Верхний байт команды
 			"cmd_LOW"=> sprintf('%02X', $cmd & 0xFF),			// Нижний байт команды
 			"subto_id"=> sprintf('%02X', $subto_id),			// Sub ID получателя
 			"to_id"=> sprintf('%02X', $to_id),				// ID получателя
-			"val_HI1"=> sprintf('%02X', $value1 >> 8),		// Верхний регистр первого значения
-			"val_LOW1"=> sprintf('%02X', $value1 & 0xFF),		// Нижний регистр первого значения
-			"val_HI2"=> sprintf('%02X', $value2 >> 8),		// Верхний регистр второго значения
-			"val_LOW2"=> sprintf('%02X', $value2 & 0xFF),		// Нижний регистр второго значения
-			"val_HI3"=> sprintf('%02X', $value3 >> 8),		// Верхний регистр третьего значения
-			"val_LOW3"=> sprintf('%02X', $value3 & 0xFF),		// Нижний регистр третьего значения
-			"val_HI4"=> sprintf('%02X', $value4 >> 8),		// Верхний регистр третьего значения
-			"val_LOW4"=> sprintf('%02X', $value4 & 0xFF),		// Нижний регистр третьего значения
+			"val_HI1"=> sprintf('%02X', $value1 >> 8),			// Верхний регистр первого значения
+			"val_LOW1"=> sprintf('%02X', $value1 & 0xFF),			// Нижний регистр первого значения
+			"val_HI2"=> sprintf('%02X', $value2 >> 8),			// Верхний регистр второго значения
+			"val_LOW2"=> sprintf('%02X', $value2 & 0xFF),			// Нижний регистр второго значения
+			"val_HI3"=> sprintf('%02X', $value3 >> 8),			// Верхний регистр третьего значения
+			"val_LOW3"=> sprintf('%02X', $value3 & 0xFF),			// Нижний регистр третьего значения
+			"val_HI4"=> sprintf('%02X', $value4 >> 8),			// Верхний регистр третьего значения
+			"val_LOW4"=> sprintf('%02X', $value4 & 0xFF),			// Нижний регистр третьего значения
 			);
 
 
@@ -1324,18 +1324,196 @@ class okbit extends module {
 		for ($i = 0; $i < $arr_count - 2; $i++){ // считаем чек сум полученного пакета
 			$check_in = $check_in + hexdec($arr[$i]);
 		}
-		if ($check_in == hexdec($arr[$arr_count - 2] . $arr[$arr_count - 1])){ //если чек сум правельный производим дальнейшию обработку
+		if ($check_in == hexdec($arr[$arr_count - 2] . $arr[$arr_count - 1])){ //если чек сум �
+											//�равельный производим дальнейшию обработку
 			
 			
-			//Дальнейшие действия в зависимости от пришедшей команды в запросе (см. список команд  в udp_send.php)
+			//Дальнейшие действия в зависимости �
+			//�т пришедшей команды в запросе (см. список команд  в udp_send.php)
 			
 			if ($udp_package['cmd'] == 11){}
 			if ($udp_package['cmd'] == 12){}
 			if ($udp_package['cmd'] == 21){}
 			
 			if ($udp_package['cmd'] == 22){
-			
-			
+				if ($this->config['API_LOG_DEBMES'])DebMes('COMMAND 22-------------------------------------, MOD - '.$udp_package['cmd'], 'okbit');
+				if (in_array($udp_package['device'], array(8001,8002,8003,8004,8005,8006,8006,8007,8008,8009,8010,8011,8012,8013,8014,8015,8016,8017,8018,8019,8020,8021,8022,8023,8024,8025,8026,8027,8028,8029,8030,8031,8032,8033,8034,8035,8036,8037,8038,8039,8040))){
+				//Обработчик девайса. При добавлении девайся, нужно указать сюда код модуля
+					if ($this->config['API_LOG_DEBMES'])DebMes('!!!ЭтaHomeBus device!!!, MOD - '.$udp_package['device'], 'okbit');
+					
+					$table_name = 'okbit_devices';
+					
+					if ($this->config['API_LOG_DEBMES'])DebMes('<<<<ИЩИМ СОВПАДЕНИЕ ПО СЕРИЙНИКУ>>> ', 'okbit');
+					$rec = SQLSelectOne("SELECT * FROM $table_name WHERE SN='".DBSafe($udp_package['vol_3'] . sprintf("%05d", $udp_package['vol_4']))."'");
+					if (!$rec['SN']) {
+						if ($this->config['API_LOG_DEBMES'])DebMes('<<<<ПОИСК ПО ID>>>> ', 'okbit');
+						$rec = SQLSelectOne("SELECT * FROM $table_name WHERE DEVICE_ID='".$udp_package['id']."'");
+						if ($this->config['API_LOG_DEBMES'])DebMes('ID'.' '.$rec['DEVICE_ID'], 'okbit');
+					}
+					
+					$rec['STATUS'] = 1;
+					$rec['UPDATED'] = date('Y-m-d H:i:s');
+					$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
+					
+					$table_name_ip = 'okbit_gate';
+					
+					$rec_gate_ip = SQLSelectOne("SELECT * FROM $table_name_ip WHERE IP='".DBSafe($gate_ip)."'");
+					if ($this->config['API_LOG_DEBMES'])DebMes('ID Шлюза в базе, для данного девайса - '.$rec_gate_ip['ID'], 'okbit');
+					if ($rec['SN'] || $rec['DEVICE_ID'] == $udp_package['id']) {
+						$rec['TITLE'] = $udp_package['mes'];
+						//$rec['SUB_ID'] = $udp_package['sub_id'];
+						//$rec['DEVICE_ID'] = $udp_package['id'];
+						//$rec['SN'] = $udp_package['vol_3'] . sprintf("%05d", $udp_package['vol_4']);
+						//$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
+						if ($this->config['API_LOG_DEBMES']) DebMes('TITLE add Auto params for device ' , 'okbit');
+						$rec['SN'] = SQLUpdate($table_name, $rec);
+					}
+					else {
+						$rec = null;
+						$rec['TITLE'] = $udp_package['mes'];
+						$rec['STATUS'] = 1;
+						$rec['UPDATED'] = date('Y-m-d H:i:s');	
+						$rec['PARENT_ID'] = $rec_gate_ip['ID'];
+						$rec['SUB_ID'] = $udp_package['sub_id'];
+						$rec['DEVICE_ID'] = $udp_package['id'];
+						$rec['DEVICE'] = $udp_package['device'];
+						//$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
+						//$rec['SN'] = $udp_package['vol_3'] . sprintf("%05d", $udp_package['vol_4']);
+						//$rec['ID'] = SQLInsert($table_name, $rec);													
+						if ($this->config['API_LOG_DEBMES']) DebMes('Add devices' , 'okbit');
+						
+						if ($udp_package['device'] == 8001){
+							$cmd_dev = explode(',',DATA_8001);
+						}
+						else if ($udp_package['device'] == 8002){
+							$cmd_dev = explode(',',DATA_8002);
+						}
+						else if ($udp_package['device'] == 8003){
+							$cmd_dev = explode(',',DATA_8003);
+						}
+						else if ($udp_package['device'] == 8004){
+							$cmd_dev = explode(',',DATA_8004);
+						}
+						else if ($udp_package['device'] == 8005){
+							$cmd_dev = explode(',',DATA_8005);
+						}
+						else if ($udp_package['device'] == 8006){
+							$cmd_dev = explode(',',DATA_8006);
+						}
+						else if ($udp_package['device'] == 8007){
+							$cmd_dev = explode(',',DATA_8007);
+						}
+						else if ($udp_package['device'] == 8008){
+							$cmd_dev = explode(',',DATA_8008);
+						}
+						else if ($udp_package['device'] == 8009){
+							$cmd_dev = explode(',',DATA_8009);
+						}
+						else if ($udp_package['device'] == 8010){
+							$cmd_dev = explode(',',DATA_8010);
+						}
+						else if ($udp_package['device'] == 8011){
+							$cmd_dev = explode(',',DATA_8011);
+						}
+						else if ($udp_package['device'] == 8012){
+							$cmd_dev = explode(',',DATA_8012);
+						}
+						else if ($udp_package['device'] == 8013){
+							$cmd_dev = explode(',',DATA_8013);
+						}
+						else if ($udp_package['device'] == 8014){
+							$cmd_dev = explode(',',DATA_8014);
+						}
+						else if ($udp_package['device'] == 8015){
+							$cmd_dev = explode(',',DATA_8015);
+						}
+						else if ($udp_package['device'] == 8016){
+							$cmd_dev = explode(',',DATA_8016);
+						}
+						else if ($udp_package['device'] == 8017){
+							$cmd_dev = explode(',',DATA_8017);
+						}
+						else if ($udp_package['device'] == 8018){
+							$cmd_dev = explode(',',DATA_8018);
+						}
+						else if ($udp_package['device'] == 8019){
+							$cmd_dev = explode(',',DATA_8019);
+						}
+						else if ($udp_package['device'] == 8020){
+							$cmd_dev = explode(',',DATA_8020);
+						}
+						else if ($udp_package['device'] == 8021){
+							$cmd_dev = explode(',',DATA_8021);
+						}
+						else if ($udp_package['device'] == 8022){
+							$cmd_dev = explode(',',DATA_8022);
+						}
+						else if ($udp_package['device'] == 8023){
+							$cmd_dev = explode(',',DATA_8023);
+						}
+						else if ($udp_package['device'] == 8024){
+							$cmd_dev = explode(',',DATA_8024);
+						}
+						else if ($udp_package['device'] == 8025){
+							$cmd_dev = explode(',',DATA_8025);
+						}
+						else if ($udp_package['device'] == 8026){
+							$cmd_dev = explode(',',DATA_8026);
+						}
+						else if ($udp_package['device'] == 8027){
+							$cmd_dev = explode(',',DATA_8027);
+						}
+						else if ($udp_package['device'] == 8028){
+							$cmd_dev = explode(',',DATA_8028);
+						}
+						else if ($udp_package['device'] == 8029){
+							$cmd_dev = explode(',',DATA_8029);
+						}
+						else if ($udp_package['device'] == 8030){
+							$cmd_dev = explode(',',DATA_8030);
+						}
+						else if ($udp_package['device'] == 8031){
+							$cmd_dev = explode(',',DATA_8031);
+						}
+						else if ($udp_package['device'] == 8032){
+							$cmd_dev = explode(',',DATA_8032);
+						}
+						else if ($udp_package['device'] == 8033){
+							$cmd_dev = explode(',',DATA_8033);
+						}
+						else if ($udp_package['device'] == 8034){
+							$cmd_dev = explode(',',DATA_8034);
+						}
+						else if ($udp_package['device'] == 8035){
+							$cmd_dev = explode(',',DATA_8035);
+						}
+						else if ($udp_package['device'] == 8036){
+							$cmd_dev = explode(',',DATA_8036);
+						}
+						else if ($udp_package['device'] == 8037){
+							$cmd_dev = explode(',',DATA_8037);
+						}
+						else if ($udp_package['device'] == 8038){
+							$cmd_dev = explode(',',DATA_8038);
+						}
+						else if ($udp_package['device'] == 8039){
+							$cmd_dev = explode(',',DATA_8039);
+						}
+						else if ($udp_package['device'] == 8040){
+							$cmd_dev = explode(',',DATA_8040);
+						}
+						foreach($cmd_dev as $cmd) {
+							
+									$cmd_rec = array();
+									$cmd_rec['TITLE'] = $cmd;
+									$cmd_rec['ETHERNET'] = 0;
+									$cmd_rec['DEVICE_ID'] = $rec['ID'];
+									SQLInsert('okbit_data', $cmd_rec);								
+						}
+						
+						
+					}
+				}
 			
 			}
 			if ($udp_package['cmd'] == 23){}
@@ -1580,7 +1758,6 @@ class okbit extends module {
 					}
 					
 					
-				
 					$rec['STATUS'] = 1;
 					$rec['UPDATED'] = date('Y-m-d H:i:s');
 					$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
@@ -1588,9 +1765,8 @@ class okbit extends module {
 					$table_name_ip = 'okbit_gate';
 					
 					$rec_gate_ip = SQLSelectOne("SELECT * FROM $table_name_ip WHERE IP='".DBSafe($gate_ip)."'");
-					if ($this->config['API_LOG_DEBMES'])DebMes('ID Шлюза в базе, для данного девайса - '.$rec_gate_ip['ID'], 'okbit');
-
 					
+					if ($this->config['API_LOG_DEBMES'])DebMes('ID Шлюза в базе, для данного девайса - '.$rec_gate_ip['ID'], 'okbit');
 					if ($rec['SN'] || $rec['DEVICE_ID'] == $udp_package['id']) {
 						$rec['SUB_ID'] = $udp_package['sub_id'];
 						$rec['DEVICE_ID'] = $udp_package['id'];
@@ -1599,7 +1775,6 @@ class okbit extends module {
 						if ($this->config['API_LOG_DEBMES']) DebMes('Auto params for device ' , 'okbit');
 						$rec['SN'] = SQLUpdate($table_name, $rec);
 					}
-
 					else {
 						$rec = null;
 						$rec['STATUS'] = 1;
@@ -1637,7 +1812,6 @@ class okbit extends module {
 						else if ($udp_package['device'] == 6008){
 							$cmd_dev = explode(',',DATA_6008);
 						}
-
 						foreach($cmd_dev as $cmd) {
 							
 									$cmd_rec = array();
@@ -1652,9 +1826,9 @@ class okbit extends module {
 					
 					
 				}
-				else if (in_array($udp_package['device'], array(8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010,8011,8012,8013,8014,8015,8016,8017,8018,8019,8020,8021,8022,8023,8024,8025,8026,8027,8028,8029,8030,8031,8032,8033,8034,8035,8036,8037,8038,8039,8040))){
+				if (in_array($udp_package['device'], array(8001,8002,8003,8004,8005,8006,8006,8007,8008,8009,8010,8011,8012,8013,8014,8015,8016,8017,8018,8019,8020,8021,8022,8023,8024,8025,8026,8027,8028,8029,8030,8031,8032,8033,8034,8035,8036,8037,8038,8039,8040))){
 				//Обработчик девайса. При добавлении девайся, нужно указать сюда код модуля
-					if ($this->config['API_LOG_DEBMES'])DebMes('!!!Это деaHomeBus вайс RS485!!!, MOD - '.$udp_package['device'], 'okbit');
+					if ($this->config['API_LOG_DEBMES'])DebMes('!!!ЭтaHomeBus device!!!, MOD - '.$udp_package['device'], 'okbit');
 					
 					$table_name = 'okbit_devices';
 					
@@ -1666,8 +1840,6 @@ class okbit extends module {
 						if ($this->config['API_LOG_DEBMES'])DebMes('ID'.$rec['DEVICE_ID'], 'okbit');
 					}
 					
-					
-				
 					$rec['STATUS'] = 1;
 					$rec['UPDATED'] = date('Y-m-d H:i:s');
 					$rec['VER'] = $udp_package['vol_1'] . '.' . $udp_package['vol_2'];
@@ -1676,8 +1848,6 @@ class okbit extends module {
 					
 					$rec_gate_ip = SQLSelectOne("SELECT * FROM $table_name_ip WHERE IP='".DBSafe($gate_ip)."'");
 					if ($this->config['API_LOG_DEBMES'])DebMes('ID Шлюза в базе, для данного девайса - '.$rec_gate_ip['ID'], 'okbit');
-
-					
 					if ($rec['SN'] || $rec['DEVICE_ID'] == $udp_package['id']) {
 						$rec['SUB_ID'] = $udp_package['sub_id'];
 						$rec['DEVICE_ID'] = $udp_package['id'];
@@ -1686,7 +1856,6 @@ class okbit extends module {
 						if ($this->config['API_LOG_DEBMES']) DebMes('Auto params for device ' , 'okbit');
 						$rec['SN'] = SQLUpdate($table_name, $rec);
 					}
-
 					else {
 						$rec = null;
 						$rec['STATUS'] = 1;
@@ -1820,7 +1989,6 @@ class okbit extends module {
 						else if ($udp_package['device'] == 8040){
 							$cmd_dev = explode(',',DATA_8040);
 						}
-
 						foreach($cmd_dev as $cmd) {
 							
 									$cmd_rec = array();
