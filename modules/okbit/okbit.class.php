@@ -1336,7 +1336,7 @@ class okbit extends module {
 			if ($udp_package['cmd'] == 21){}
 			
 			if ($udp_package['cmd'] == 22){
-				if ($this->config['API_LOG_DEBMES'])DebMes('COMMAND 22-------------------------------------, MOD - '.$udp_package['cmd'], 'okbit');
+				if ($this->config['API_LOG_DEBMES'])DebMes('COMMAND 22 BEGIN-------------------------------------, MOD - '.$udp_package['cmd'], 'okbit');
 				if (in_array($udp_package['device'], array(8001,8002,8003,8004,8005,8006,8006,8007,8008,8009,8010,8011,8012,8013,8014,8015,8016,8017,8018,8019,8020,8021,8022,8023,8024,8025,8026,8027,8028,8029,8030,8031,8032,8033,8034,8035,8036,8037,8038,8039,8040))){
 				//Обработчик девайса. При добавлении девайся, нужно указать сюда код модуля
 					if ($this->config['API_LOG_DEBMES'])DebMes('!!!ЭтaHomeBus device!!!, MOD - '.$udp_package['device'], 'okbit');
@@ -1514,6 +1514,7 @@ class okbit extends module {
 						
 					}
 				}
+				if ($this->config['API_LOG_DEBMES'])DebMes('COMMAND 22 END-------------------------------------, MOD - '.$udp_package['cmd'], 'okbit');
 			
 			}
 			if ($udp_package['cmd'] == 23){}

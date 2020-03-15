@@ -80,7 +80,7 @@
 	 }
 	
 	$table_gate_sql = 'okbit_gate';
-
+	$table_deviceahb_sql = 'okbit_devices';
 	while (1){	   
 		if ((time()-$latest_check)>$checkEvery) {
 			$latest_check=time();
@@ -90,7 +90,7 @@
 		if ((time() - $latest_disc) >= $disc_period) {
 			$latest_disc = time();
 			if ($cycle_debug) echo date('H:i:s')." - Starting scan gates".PHP_EOL;
-			
+			//gates 
 			$gates = SQLSelect("SELECT * FROM `okbit_gate`");
 			if ($gates[0]['ID']) {
 				$total = count($gates);
@@ -101,6 +101,18 @@
 					SQLUpdate($table_gate_sql, $gates[$i]);																
 				}
 			}
+			//devices
+			$devices_ahb = SQLSelect("SELECT * FROM `okbit_devices`");
+			if ($devices_ahb[0]['ID']) {
+				$total = count($devices_ahb);
+				if ($cycle_debug) echo "In base found - " . $total . " devices" .PHP_EOL;
+				for ($i = 0; $i < $total; $i++) {
+					if ($cycle_debug) echo "Device ID - ". $devices_ahb[$i]['ID'] . "  IP: " . $devices_ahb[$i]['IP'] . PHP_EOL;
+					$devices_ahb[$i]['STATUS'] = 0;
+					SQLUpdate($table_deviceahb_sql, $devices_ahb[$i]);
+				}
+			}
+			
 			$okbit_module->test_update_gate();
 		}		  
 	
